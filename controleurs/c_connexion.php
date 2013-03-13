@@ -21,6 +21,7 @@ switch($action){
             $_SESSION['nom']= $visiteur['VIS_NOM'];
             $_SESSION['prenom']= $visiteur['VIS_PRENOM'];
             include("vues/v_sommaire.php");
+            include("vues/v_accueil.php");
 			}
 		break;
 	}
