@@ -5,6 +5,11 @@
     <title>Application Laboratoire Galaxy-Swiss Bourdin</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
+    <!-- include du fichier js du même nom que le js -->
+    <?php if(file_exists("./js/j_". $uc .".js")) { ?>
+      <script type="text/javascript" src="./js/j_<?php echo $uc; ?>.js"></script>
+    <?php } ?>
+
     <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
   </head>
   <body>
