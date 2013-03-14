@@ -2,8 +2,6 @@
 require_once("include/fct.inc.php");
 require_once ("include/modele.inc.php");
 
-include("vues/v_entete.php") ;
-
 session_start();
 $pdo = PdoGsb::getPdoGsb();
 
@@ -13,6 +11,8 @@ else if(!isset($_REQUEST['uc']) && (isset($_SESSION['login'])))
 	$uc = '';
 else
 	$uc = $_REQUEST['uc'];
+
+include("vues/v_entete.php") ;
 
 switch($uc){
 	case 'connexion':{
