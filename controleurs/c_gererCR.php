@@ -5,5 +5,5 @@ $idVisiteur = $_SESSION['vis_matricule'];
 switch($action){
 	
 	}
-
+include("vues/v_gererCR.php");
 ?>
