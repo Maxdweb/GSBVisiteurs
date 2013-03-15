@@ -29,7 +29,6 @@
     foreach($praticiens as $unPraticien)
     {
 ?>
-        
     <tr>
         <td>
             <?php $unPraticien['PRA_NUM'] ?>
