@@ -68,6 +68,15 @@ class PdoGsb{
 		return $ligne;
         // ou return $this->_pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    
+    function getTousPracticiens($tri)
+{
+ // retourne un tableau associatif contenant tous les praticiens
+         $req="SELECT *  FROM praticien ORDER BY ". $tri ;
+         $rs = PdoGsb::$monPdo->query($req);
+         $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
+         return $ligne;
+}
+    
 }   
   ?>
