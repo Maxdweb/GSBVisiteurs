@@ -28,7 +28,7 @@
               <a href="index.php?uc=consulterMedicaments" title="Consulter les médicaments">    Médicaments</a>
            </li>
            <li class="smenu">
-              <a href="index.php?uc=consulterMedicaments" title="Consulter les praticiens">Praticiens</a>
+              <a href="index.php?uc=consulterPratictiens" title="Consulter les praticiens">Praticiens</a>
            </li><br/>
 
            <li class="smenu">

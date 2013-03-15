@@ -25,7 +25,7 @@ switch($uc){
 		include("controleurs/c_consulterMedicaments.php");break;
 	}
 	case 'consulterPratictiens' :{
-		include("controleurs/c_consulterPratictiens.php");break; 
+		include("controleurs/c_consulterPraticiens.php");break; 
 	}
 	default :{
 		include("vues/v_sommaire.php");
