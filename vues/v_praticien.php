@@ -1,9 +1,11 @@
 <!-- Affichage du tableau de consultation des praticiens  -->
 
-
-<table>
+<fieldset>
+    <legend> Praticiens </legend>
+    
+<table style=" ">
     <!-- Affichage des titres -->
-    <tr>
+    <tr style="border: 1px solid black; ">
         <th>
             <a href ="index.php?uc=consulterPratictiens&tri=PRA_NUM" > Numero </a>
         </th>
@@ -25,30 +27,37 @@
     </tr>   
 
 <?php
+
+
     // parcours du tableau 
     foreach($praticiens as $unPraticien)
     {
 ?>
     <tr>
         <td>
-            <?php $unPraticien['PRA_NUM'] ?>
+            <?php echo $unPraticien['PRA_NUM']; ?>
         </td>
         <td>
-            <?php $unPraticien['PRA_NOM'] ?>
+            <?php echo $unPraticien['PRA_NOM']; ?>
         </td>
         <td>
-            <?php $unPraticien['PRA_PRENOM'] ?>
+            <?php echo $unPraticien['PRA_PRENOM']; ?>
         </td>
         <td>
-            <?php $unPraticien['PRA_ADRESSE']." ".$unPraticien['PRA_CP']." ".$unPraticien['PRA_VILLE'] ?>
+            <?php echo $unPraticien['PRA_ADRESSE']." ".$unPraticien['PRA_CP']." ".$unPraticien['PRA_VILLE']; ?>
         </td>
         <td>
-            <?php $unPraticien['PRA_COEFNOTORIETE'] ?>
+            <?php echo $unPraticien['PRA_COEFNOTORIETE']; ?>
         </td>
         <td>
-            <?php $unPraticien['TYP_CODE'] ?>
+            <?php echo $unPraticien['TYP_CODE']; ?>
         </td>
     </tr>
+   
 <?php   
     }
 ?>
+
+    </table>
+</fieldset> 
+    
