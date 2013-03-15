@@ -69,14 +69,32 @@ class PdoGsb{
         // ou return $this->_pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    function getTousPracticiens($tri)
-{
- // retourne un tableau associatif contenant tous les praticiens
-         $req="SELECT *  FROM praticien ORDER BY ". $tri ;
-         $rs = PdoGsb::$monPdo->query($req);
-         $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
-         return $ligne;
-}
+    public function getTousPracticiens($tri)
+    {
+      // retourne un tableau associatif contenant tous les praticiens
+      $req="SELECT *  FROM praticien ORDER BY ". $tri ;
+      $rs = PdoGsb::$monPdo->query($req);
+      $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
+      return $ligne;
+    }
+
+    public function getIdAndNameOfMedics()
+    {
+      // retourne un tableau associatif contenant tous les praticiens
+      $req="SELECT med_depotlegal, med_nomcommercial FROM medicament ORDER BY med_nomcommercial" ;
+      $rs = PdoGsb::$monPdo->query($req);
+      $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
+      return $ligne;
+    }
+
+    public function getMedicById($id)
+    {
+      // retourne un tableau associatif contenant tous les praticiens
+      $req="SELECT * FROM medicament WHERE med_depotlegal = '". $id ."'" ;
+      $rs = PdoGsb::$monPdo->query($req);
+      $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
+      return $ligne;
+    }
     
 }   
   ?>
