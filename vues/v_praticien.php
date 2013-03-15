@@ -3,7 +3,7 @@
 <fieldset>
     <legend> Praticiens </legend>
     
-<table style=" ">
+<table>
     <!-- Affichage des titres -->
     <tr style="border: 1px solid black; ">
         <th>
@@ -20,9 +20,6 @@
         </th>
         <th>
              <a href ="index.php?uc=consulterPratictiens&tri=PRA_COEFNOTORIETE" > Notori&eacute;t&eacute; </a>
-        </th>
-        <th>
-             <a href ="index.php?uc=consulterPratictiens&tri=TYP_CODE" > Code </a>
         </th>
     </tr>   
 
@@ -50,7 +47,7 @@
             <?php echo $unPraticien['PRA_COEFNOTORIETE']; ?>
         </td>
         <td>
-            <?php echo $unPraticien['TYP_CODE']; ?>
+             <a href ="index.php?uc=consulterPratictiens&detail=<?php echo $unPraticien['PRA_NUM']; ?> " >  Detail </a>
         </td>
     </tr>
    

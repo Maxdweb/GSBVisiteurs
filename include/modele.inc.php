@@ -96,5 +96,13 @@ class PdoGsb{
       return $ligne;
     }
     
+    public function getinfosPraticien($num)
+    {
+        // retourne un tableau associatif contenant toutes les informations du praticien choisi
+      $req="SELECT PRA_NUM, PRA_NOM, PRA_PRENOM, PRA_ADRESSE, PRA_CP, PRA_VILLE, PRA_COEFNOTORIETE, TYP_LIBELLE FROM praticien p, type_praticien t WHERE p.TYP_CODE = t.TYP_CODE AND PRA_NUM=".$num; 
+      $rs = PdoGsb::$monPdo->query($req);
+      $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
+      return $ligne;
+    }
 }   
   ?>
