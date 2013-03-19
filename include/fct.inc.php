@@ -57,6 +57,24 @@ function estDateDepassee($dateTestee){
 	@list($jourTeste,$moisTeste,$anneeTeste) = explode('/',$dateTestee);
 	return ($anneeTeste.$moisTeste.$jourTeste < $AnPasse); 
 }
+
+
+/**
+ * verifie qu'une date est bien passée 
+ * 
+  * @param $dateTestee 
+  * @return vrai ou faux
+ */
+function estDatePassee($dateTestee)
+{
+	$dateActuelle=date("d/m/Y");
+	@list($jour,$mois,$annee) = explode('/',$dateActuelle);
+	$AnPasse = $annee.$mois.$jour;
+	@list($jourTeste,$moisTeste,$anneeTeste) = explode('/',$dateTestee);
+	return ($anneeTeste.$moisTeste.$jourTeste < $AnPasse); 
+}
+
+
 /**
  * Vérifie la validité du format d'une date française jj/mm/aaaa 
  
