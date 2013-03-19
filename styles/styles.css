@@ -310,3 +310,8 @@ table.listeLegere th.libelle{
 {
   border: 0px solid white;
 }
+
+#formSaisie table
+{
+  border: 0px solid white;
+}
