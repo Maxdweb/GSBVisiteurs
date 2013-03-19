@@ -18,7 +18,7 @@
               <a href="index.php?uc=gererCR&action=saisirCR" title="Nouveaux comptes rendus">Nouveaux</a>
            </li>
            <li class="smenu">
-              <a href="index.php?uc=gererCR&action=consulterCR" title="Consulter les comptes rendus">Consulter</a>
+              <a href="index.php?uc=consulterCR" title="Consulter les comptes rendus">Consulter</a>
            </li><br/>
 
            <li class="smenu">
