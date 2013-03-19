@@ -3,9 +3,10 @@
 <fieldset>
     <legend> Praticiens </legend>
     
-<table>
+<table style="border-collapse: collapse;">
+    
     <!-- Affichage des titres -->
-    <tr style="border: 1px solid black; ">
+    <tr style="border: 1px solid black; background-color: #c6d2da">
         <th>
             <a href ="index.php?uc=consulterPratictiens&tri=PRA_NUM" > Numero </a>
         </th>
@@ -21,16 +22,25 @@
         <th>
              <a href ="index.php?uc=consulterPratictiens&tri=PRA_COEFNOTORIETE" > Notori&eacute;t&eacute; </a>
         </th>
+        <th>
+            &nbsp;
+        </th>
     </tr>   
 
 <?php
 
+    $i = 0;
 
     // parcours du tableau 
     foreach($praticiens as $unPraticien)
     {
+        // changement de couleur pour un sur deux
+        if($i%2 == 0)
+            echo '<tr style = "background-color: #77AADD;">';
+        else
+            echo '<tr>'
+        
 ?>
-    <tr>
         <td>
             <?php echo $unPraticien['PRA_NUM']; ?>
         </td>
@@ -51,7 +61,9 @@
         </td>
     </tr>
    
-<?php   
+<?php 
+    $i ++;
+    
     }
 ?>
 
