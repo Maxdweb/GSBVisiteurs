@@ -90,7 +90,7 @@ class PdoGsb{
     public function getMedicById($id)
     {
       // retourne un tableau associatif contenant tous les praticiens
-      $req="SELECT * FROM medicament WHERE med_depotlegal = '". $id ."'" ;
+      $req="SELECT * FROM medicament, famille WHERE medicament.FAM_CODE = famille.FAM_CODE AND med_depotlegal = '". $id ."'" ;
       $rs = PdoGsb::$monPdo->query($req);
       $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
       return $ligne;

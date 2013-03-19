@@ -3,7 +3,7 @@
 		<tr>
 			<td>Choisir un médicament :</td>
 			<td>	
-				<select id="medicsList" onchange="hello();">
+				<select id="medicsList" onchange="request();">
 					<?php
 						foreach ($myMedics as $elt) { ?>
 							<option value="<?php echo $elt['med_depotlegal']; ?>"><?php echo $elt['med_nomcommercial']; ?></option>
