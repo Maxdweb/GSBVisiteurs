@@ -12,7 +12,7 @@ switch($action)
 		include("vues/v_gererCR.php");
                 break;
 	}
-	case "valideCR" :
+	case "validerCR" :
 	{
 		include('include/modele_validerSaisieCR.php');
 		if(isset($_REQUEST['erreurs']))

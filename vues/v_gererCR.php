@@ -8,7 +8,7 @@
      <table>
         <tr>
             <td>Date Visite :</td>
-    <td><input type="date" name="dateVisite" required></td>
+    <td><input type="date" name="dateVisite" placeholder="jj/mm/aaaa"required></td>
     </tr>
     <tr>
     <td>Date Rapport : </td> 
@@ -60,7 +60,7 @@
     <table>
     <tr>
         <td>Produit 01 : </td>
-        <td><select name="listeProduits1" required>
+        <td><select name="listeProduits[0]" required>
                 <option value="">Choisir un produit</option>
                  <?php
                     foreach($myMedics as $unMyMedic)
@@ -72,14 +72,14 @@
                     ?>
             </select></td>
             <td>&nbsp;Echantillons :</td>
-            <td><input type="checkbox" name="echantillon1" unchecked></td>
-            <td><input type="number" name="quantite1"></td>
+            <td><input type="checkbox" name="echantillon[0]" unchecked></td>
+            <td><input type="number" name="quantite[0]"></td>
             <td>&nbsp;Documentation offerte :</td>
-            <td><input type="checkbox" name="documentation1" unchecked></td> 
+            <td><input type="checkbox" name="documentation[0]" unchecked></td> 
             </tr>
             <tr>
         <td>Produit 02 : </td>
-        <td><select name="listeProduits2" required>
+        <td><select name="listeProduits[1]" required>
                 <option value="">Choisir un produit</option>
                  <?php
                     foreach($myMedics as $unMyMedic)
@@ -91,10 +91,10 @@
                     ?>
             </select></td>
             <td>&nbsp;Echantillons :</td>
-            <td><input type="checkbox" name="echantillon2" unchecked></td>
-            <td><input type="number" name="quantite2"></td>
+            <td><input type="checkbox" name="echantillon[1]" unchecked></td>
+            <td><input type="number" name="quantite[1]"></td>
             <td>&nbsp;Documentation offerte :</td>
-            <td><input type="checkbox" name="documentation2" unchecked></td> 
+            <td><input type="checkbox" name="documentation[1]" unchecked></td> 
             </tr>
             </table>
     </fieldset>
