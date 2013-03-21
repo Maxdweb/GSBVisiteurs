@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td>Coefficient</td>
-                <td><input type="text" name="coeff" required></td>
+                <td><input type="number" name="coeff" required min="0" max="999" onKeyPress="return checkNumber(event)"></td>
             </tr>
             <tr>
                 <td>Motif</td>
@@ -67,7 +67,7 @@
                 </td>
                 <td>&nbsp;Echantillons :</td>
                 <td><input type="checkbox" name="echantillon[0]" unchecked disabled onchange="checkEchantillon(event)"></td>
-                <td><input type="number" name="quantite[0]" disabled min="0"></td>
+                <td><input type="number" name="quantite[0]" disabled min="0" max="99" onKeyPress="return checkNumber(event)"></td>
                 <td>&nbsp;Documentation offerte :</td>
                 <td><input type="checkbox" name="documentation[0]" unchecked disabled></td> 
             </tr>
@@ -83,7 +83,7 @@
                 </td>
                 <td>&nbsp;Echantillons :</td>
                 <td><input type="checkbox" name="echantillon[1]" unchecked disabled onchange="checkEchantillon(event)"></td>
-                <td><input type="number" name="quantite[1]" disabled min="0"></td>
+                <td><input type="number" name="quantite[1]" disabled min="0" max="99" onKeyPress="return checkNumber(event)"></td>
                 <td>&nbsp;Documentation offerte :</td>
                 <td><input type="checkbox" name="documentation[1]" unchecked disabled></td> 
             </tr>
