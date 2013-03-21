@@ -104,5 +104,41 @@ class PdoGsb{
       $ligne = $rs->fetchAll(PDO::FETCH_ASSOC);
       return $ligne;
     }
+    
+    public function updateCoeffNotoriete($Coeff , $PraNum)
+    {
+        // recalcule la moyenne du coefficient de notoriete du praticiens dans la base de donnée
+        $req="UPDATE praticien SET PRA_COEFNOTORIETE = ".$Coeff." WHERE PRA_NUM = ".$PraNum;
+        $rs = PdoGsb::$monPdo->query($req);
+        
+    }
+    
+    public function insertRapportVisite($VisiteurMatricule, $PraNum , $RapDateVisite, $RapBilan , $RapMotif , $RapRemplacant)
+    {
+        //Insere des données du formulaire dans la table rapport_visite dans la bdd
+        $num = getNumRapportMax();
+        $RapDate = date ("d/m/Y");
+        $req = "INSERT INTO rapport_visite VALUES ($VisiteurMatricule , $num , $PraNum , $RapDate , $RapDateVisite, $RapBilan , $RapMotif , $RapRemplacant)";
+        $rs = PdoGsb::$monPdo->query($req);
+    }
+    
+    public function getNumRapportMax()
+    {
+        //recupere le numero de rapport le plus grand auquel on rajoute +1
+        $req = "Select MAX(RAP_NUM)+1 From rapport_visite";
+        $rs = PdoGsb::$monPdo->query($req);
+        $ligne = $rs->fetchAll (PDO::FETCH_ASSOC);
+        return $ligne;
+    }
+    
+    public function insertOffrir($VisiteurMatricule , $MedDepotLegal , $OffQte , $OffDoc , $OffEchantillon)
+    {
+        //insere des données du formulaire dans la table offrir dans la bdd
+        $num = getNumRapportMax();
+        $req = "INSERT INTO offrir VALUES ($VisiteurMatricule , $num , $MedDepotLegal , $OffQte , $OffDoc , $OffEchantillon)";
+        $rs = PdoGsb::$monPdo->query($req);
+    }
 }   
   ?>
+
+
