@@ -2,47 +2,105 @@
 
     include('fct.inc.php');
 
-    //recuperation des informations
-    $date = $_REQUEST["dateVisite"];
     
+    /*
+     * DATE
+     */
+    if(isset($_REQUEST["dateVisite"]))
+    {
+        $date = $_REQUEST["dateVisite"];
+        if(!estDateValide($date))                   // verifie la validité de la date
+            ajouterErreur("Date invalide");
+        elseif(estDateDepassee($date))              // verifie que la date n'est pas depassée de plus d'un an
+            ajouterErreur("Date depassée d'un an");
+        elseif(!estDatePassee($date))                   // verifie que la date soit bien passée
+            ajouterErreur ("La date n'est pas encore pass&eacute;e ");
+    }
+    else
+        ajouterErreur ("pas de date entr&eacute;e");
+    
+    
+    
+    
+    
+    /*
+     * QUANTITE
+     */
     if(isset($_REQUEST["quantite"]))
-        $quantité = $_REQUEST["quantite"];
+    {
+        $quantite = $_REQUEST["quantite"];
     
-    $coef = $_REQUEST["coeff"];
-    
-//  coeficient, quantité()
+        foreach($quantite as $uneQuantité)
+        {
 
-    /**
-     *  verification de la date 
+            if(!is_integer($uneQuantité))
+                ajouterErreur("Quantit&eacute; invalide");
+            elseif($uneQuantité > 99 )
+                ajouterErreur("Quantit&eacute; trop grande");
+            elseif($uneQuantité <= 0)
+                ajouterErreur ("quantité inferieure ou egale &agrave; 0");
+
+        }
+    }
+    
+    
+    
+    
+    
+    
+    /*
+     * COEFICIENT
      */
+    if(isset($_REQUEST["coeff"]))
+    {
+        $coef = $_REQUEST["coeff"];
+        if(!is_float($coef))
+             ajouterErreur("coefficient invalide");
+        elseif($coef < 0 )
+             ajouterErreur("coefficient negatif");
+        elseif($coef > 999)
+            ajouterErreur ("coefficient trop grand");
+    }
+        
+    else
+        ajouterErreur ("pas de coefficient entr&eacute;");
+    
    
-    if(!estDateValide($date))                   // verifie la validité de la date
-        ajouterErreur("Date invalide");
-    elseif(estDateDepassee($date))              // verifie que la date n'est pas depassée de plus d'un an
-        ajouterErreur("Date depassée d'un an");
-    elseif(!estDatePassee($date))                   // verifie que la date soit bien passée
-        ajouterErreur ("La date n'est pas encore pass&eacute;e !");
-    
-        
 
-    // si elle est pas passée
-    
-    /**
-     *  verification du numero
+    /*
+     * MOTIF  
      */
-    
-    // verifie si c'est un integer
-    if(!is_integer($numero))
-        ajouterErreur("Numero invalide");
-    
-    // verifie si il n'est pas deja present dans la base
-    
-    
-  
-    /**
-     *  verification de la quantité
-     */    
-     if(!is_integer($quantité))
-         ajouterErreur("Quantit&eacute; invalide");
+    if(isset($_REQUEST["listeMotifs"]))
+    {
+        $motif = $_REQUEST["listeMotifs"];
         
+        if($motif == "Autre")
+        {
+            if(isset($_REQUEST["autreMotif"]))
+            {
+                $motif = $_REQUEST["autreMotif"];
+                if(!is_string($motif))
+                    ajouterErreur ("Motif invalide");
+            }
+            else
+                ajouterErreur ("veulliez entrer un motif");
+        }
+    }
+
+    
+  /*
+   * BILAN 
+   */
+    if(isset($_REQUEST["bilan"]))
+    {
+       $bilan =  $_REQUEST["bilan"];
+       
+       if(!is_string($bilan))
+           ajouterErreur ("bilan invalide");
+       
+    }
+    else
+        ajouterErreur("veuillez entrer votre bilan");
+    
+    
 ?>
