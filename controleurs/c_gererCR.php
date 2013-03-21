@@ -18,8 +18,21 @@ switch($action)
 		if(isset($_REQUEST['erreurs']))
 			include('vues/v_erreurs.php');
 		else
-		{
-			// INSERTION A L'AIDE DE LA FONCTION
+		{                  
+                      // insertion du rapport
+                      insertRapportVisite( $_SESSION['vis_matricule'] , $numPra , $date , $bilan , $motif , $remplacant);
+                    
+                      // misa à jour du coefficient
+                      updateCoeffNotoriete($coef, $numPra);
+                      
+                      // insertion des produit
+                      if($echantillon != "false")
+                      {
+                          
+                      }
+                      
+                         
+                    
 			include('vues/v_gererCR.php');
 		}
                 break;
