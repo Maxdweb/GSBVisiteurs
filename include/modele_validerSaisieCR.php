@@ -61,7 +61,7 @@
     if(isset($_REQUEST["coeff"]))
     {
         $coef = $_REQUEST["coeff"];
-        if(!is_float($coef))
+        if(!is_float($coef) && !is_integer($coef))
              ajouterErreur("coefficient invalide");
         elseif($coef < 0 )
              ajouterErreur("coefficient negatif");
