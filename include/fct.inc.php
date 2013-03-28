@@ -101,6 +101,24 @@ function estDateValide($date){
 }
 
 /**
+ * Verifie si un tableau contient uniquement des entiers 
+ 
+ * @param $tab 
+ * @return vrai ou faux
+*/
+function estTableauEntiers($tab){
+	$flag = true;
+
+	foreach ($tab as $elt) 
+	{
+		if(!preg_match("/[^0-9]/", $elt))
+			$flag = false;
+	}
+
+	return $flag;
+}
+
+/**
  * Ajoute le libellé d'une erreur au tableau des erreurs 
  
  * @param $msg : le libellé de l'erreur 
