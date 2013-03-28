@@ -143,9 +143,11 @@ class PdoGsb{
     public function insertOffrir($VisiteurMatricule , $MedDepotLegal , $OffQte , $OffDoc , $OffEchantillon)
     {
         //insere des données du formulaire dans la table offrir dans la bdd
-        $num = getNumRapportMax();
-        $req = "INSERT INTO offrir VALUES ($VisiteurMatricule , $num , $MedDepotLegal , $OffQte , $OffDoc , $OffEchantillon)";
+        $num = $this->getNumRapportMax();
+        $req = "INSERT INTO offrir VALUES ('$VisiteurMatricule' , $num , '$MedDepotLegal' , '$OffQte' , '$OffDoc' , '$OffEchantillon')";
+        echo $req;
         $rs = PdoGsb::$monPdo->query($req);
+        
     }
 }   
   ?>

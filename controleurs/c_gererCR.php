@@ -29,13 +29,11 @@ switch($action)
                       $pdo->updateCoeffNotoriete($coef, $numPra);
                       
                       // insertion des produit
-                      if($echantillon != "false")
+                      for ($i=0; $i< sizeof($produit); $i++ )
                       {
-                          $pdo->insertOffrir($_SESSION['vis_matricule'] , $echantillon , $quantite , $doc , $OffEchantillon);
+                          if ($produit[$i]!="")
+                            $pdo->insertOffrir($_SESSION['vis_matricule'] , $produit[$i] , $quantite[$i] , $doc[$i] , $echantillon[$i]);
                       }
-                      
-                         
-                    
 			//include('vues/v_gererCR.php');
 		}
                 break;

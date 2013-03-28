@@ -31,6 +31,19 @@
     if(isset($_REQUEST["echantillon"]))
     {
         $echantillon = $_REQUEST["echantillon"];
+        
+        for ($i =0 ; $i<2 ; $i++)
+        {
+            if (isset($echantillon[$i]))
+            {
+                if ($echantillon[$i] == TRUE)
+                    $echantillon[$i] = 1 ;
+                else
+                    $echantillon[$i] = 0 ;
+            }
+            else 
+                $echantillon[$i] = 0 ;
+        }
     }
     else
         $echantillon = "false";
@@ -148,6 +161,19 @@
     if(isset($_REQUEST["documentation"]))
     {
         $doc = $_REQUEST["documentation"];
+    
+        for ($i =0 ; $i<2 ; $i++)
+        {
+            if (isset($doc[$i]))
+            {
+                if ($doc[$i] == TRUE)
+                    $doc[$i] = 1 ;
+                else
+                    $doc[$i] = 0 ;
+            }
+            else 
+                $doc[$i] = 0 ;
+        }
     }
     else
         $doc = array(0,0);
