@@ -31,7 +31,7 @@ switch($action)
                       // insertion des produit
                       if($echantillon != "false")
                       {
-                          
+                          $pdo->insertOffrir($_SESSION['vis_matricule'] , $echantillon , $quantite , $doc , $OffEchantillon);
                       }
                       
                          

@@ -87,14 +87,18 @@ function estDateValide($date){
 	$dateOK = true;
 	if (count($tabDate) != 3) {
 	    $dateOK = false;
+            echo "1";
+            var_dump($tabDate);
     }
     else {
 		if (!estTableauEntiers($tabDate)) {
 			$dateOK = false;
+                        
 		}
 		else {
 			if (!checkdate($tabDate[1], $tabDate[0], $tabDate[2])) {
-				$dateOK = false;                  
+				$dateOK = false;
+                                
 			}
 		}
     }

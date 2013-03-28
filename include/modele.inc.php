@@ -119,8 +119,10 @@ class PdoGsb{
         {
             //Insere des données du formulaire dans la table rapport_visite dans la bdd
             $num = $this->getNumRapportMax();
-            $RapDate = date("d/m/Y");
-            $req = "INSERT INTO rapport_visite VALUES ('$VisiteurMatricule' , '$num' , '$PraNum' , '$RapDate' , '$RapDateVisite', '$RapBilan' , '$RapMotif' , '$RapRemplacant')";
+            $RapDate = date("Y-m-d");
+            var_dump($num);
+            $req = "INSERT INTO rapport_visite VALUES ('$VisiteurMatricule' , $num , '$PraNum' , '$RapDate'  , '$RapDateVisite', '$RapBilan' , '$RapMotif' , '$RapRemplacant')";
+            echo $req;
             $rs = PdoGsb::$monPdo->query($req);
         }
         catch(Exception $ex)
@@ -132,10 +134,10 @@ class PdoGsb{
     public function getNumRapportMax()
     {
         //recupere le numero de rapport le plus grand auquel on rajoute +1
-        $req = "Select MAX(RAP_NUM)+1 From rapport_visite";
+        $req = "Select MAX(RAP_NUM)+1 as Num_Rapport From rapport_visite";
         $rs = PdoGsb::$monPdo->query($req);
         $ligne = $rs->fetchAll (PDO::FETCH_ASSOC);
-        return $ligne;
+        return $ligne[0]['Num_Rapport'];
     }
     
     public function insertOffrir($VisiteurMatricule , $MedDepotLegal , $OffQte , $OffDoc , $OffEchantillon)

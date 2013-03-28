@@ -9,13 +9,17 @@
         $date = $_REQUEST["dateVisite"];
         
         $date = dateAnglaisVersFrancais($date);
-        
+               
         if(!estDateValide($date))                   // verifie la validité de la date
             ajouterErreur("Date invalide");
         elseif(estDateDepassee($date))              // verifie que la date n'est pas depassée de plus d'un an
             ajouterErreur("Date depassée d'un an");
         elseif(!estDatePassee($date))                   // verifie que la date soit bien passée
             ajouterErreur ("La date n'est pas encore pass&eacute;e ");
+    
+        $date = dateFrancaisVersAnglais($date);
+        
+        $date = str_replace('/', '-', $date);
     }
     else
         ajouterErreur ("pas de date entr&eacute;e");

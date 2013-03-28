@@ -8,11 +8,11 @@
         <table>
             <tr>
                 <td>Date Visite :</td>
-                <td><input type="date" name="dateVisite" placeholder="jj/mm/aaaa" required onKeyPress="return forceDateInput(event)" maxlength="10"></td>
+                <td><input type="date" name="dateVisite" placeholder="jj-mm-aaaa" required onKeyPress="return forceDateInput(event)" maxlength="10"></td>
             </tr>
             <tr>
                 <td>Date Rapport : </td> 
-                <td><?php echo date("d/m/Y") ?></td>
+                <td><?php echo date("d-m-Y") ?></td>
             </tr>
             <tr>
                 <td> Praticiens :</td>
