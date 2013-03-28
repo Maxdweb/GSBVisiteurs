@@ -120,7 +120,7 @@ class PdoGsb{
             //Insere des données du formulaire dans la table rapport_visite dans la bdd
             $num = $this->getNumRapportMax();
             $RapDate = date("d/m/Y");
-            $req = "INSERT INTO rapport_visite VALUES ($VisiteurMatricule , $num , $PraNum , $RapDate , $RapDateVisite, $RapBilan , $RapMotif , $RapRemplacant)";
+            $req = "INSERT INTO rapport_visite VALUES ('$VisiteurMatricule' , '$num' , '$PraNum' , '$RapDate' , '$RapDateVisite', '$RapBilan' , '$RapMotif' , '$RapRemplacant')";
             $rs = PdoGsb::$monPdo->query($req);
         }
         catch(Exception $ex)
