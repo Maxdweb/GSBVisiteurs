@@ -50,7 +50,7 @@
         }
     }
     else
-        $quantite = [0,0];
+        $quantite = array(0,0);
     
     
     
