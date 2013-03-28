@@ -6,6 +6,7 @@ $action = $_REQUEST['action'];
 $idVisiteur = $_SESSION['vis_matricule'];
 $praticiens = $pdo->getTousPracticiens("PRA_NOM");
 $myMedics = $pdo->getIdAndNameOfMedics();
+
 switch($action)
 {
 	case "saisirCR" :
@@ -16,12 +17,13 @@ switch($action)
 	case "validerCR" :
 	{
 		include('include/modele_validerSaisieCR.php');
+                
 		if(isset($_REQUEST['erreurs']))
 			include('vues/v_erreurs.php');
 		else
 		{                  
                       // insertion du rapport
-                      insertRapportVisite( $_SESSION['vis_matricule'] , $numPra , $date , $bilan , $motif , $remplacant);
+                      insertRapportVisite($_SESSION['vis_matricule'] , $numPra , $date , $bilan , $motif , $remplacant);
                     
                       // misa à jour du coefficient
                       updateCoeffNotoriete($coef, $numPra);

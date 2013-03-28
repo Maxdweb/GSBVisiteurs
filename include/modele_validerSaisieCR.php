@@ -133,16 +133,9 @@
      * REMPLACANT
      */
     if(isset($_REQUEST["remplacant"]))
-    {
-        $remplacant = $_REQUEST["remplacant"];
-        
-        if($remplacant == TRUE)
-            $remplacant = 1;
-        else
-            $remplacant = 0;
-    }
+        $remplacant = 1;
     else
-        ajouterErreur("pas de retour de remplacant");
+        $remplacant = 0;
     
     
     
