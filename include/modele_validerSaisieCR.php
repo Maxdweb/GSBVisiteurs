@@ -1,7 +1,5 @@
 <?php
 
-    include('fct.inc.php');
-
     
     /*
      * DATE
