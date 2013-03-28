@@ -26,7 +26,7 @@
     
     
     /*
-     * PRODUIT
+     * ECHANTILLON
      */
     if(isset($_REQUEST["echantillon"]))
     {
@@ -141,6 +141,24 @@
     else
         $remplacant = 0;
     
+    /*
+     * DOC
+     */
     
-
+    if(isset($_REQUEST["documentation"]))
+    {
+        $doc = $_REQUEST["documentation"];
+    }
+    else
+        $doc = array(0,0);
+    
+    /*
+     * PRODUIT
+     */
+    if(isset($_REQUEST["listeProduits"]))
+    {
+        $produit = $_REQUEST["listeProduits"];
+    }
+    else
+        ajouterErreur("pas de produits");
 ?>
