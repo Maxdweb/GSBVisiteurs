@@ -34,7 +34,7 @@ switch($action)
                           if ($produit[$i]!="")
                             $pdo->insertOffrir($_SESSION['vis_matricule'] , $produit[$i] , $quantite[$i] , $doc[$i] , $echantillon[$i]);
                       }
-			//include('vues/v_gererCR.php');
+			include('vues/v_gererCR.php');
 		}
                 break;
 	}
