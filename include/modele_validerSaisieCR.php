@@ -1,7 +1,5 @@
 <?php
 
-    include('fct.inc.php');
-
     
     /*
      * DATE
@@ -20,8 +18,15 @@
         ajouterErreur ("pas de date entr&eacute;e");
     
     
-    
-    
+    /*
+     * PRODUIT
+     */
+    if(isset($_REQUEST["echantillon"]))
+    {
+        $echantillon = $_REQUEST["echantillon"];
+    }
+    else
+        $echantillon = "false";
     
     /*
      * QUANTITE
@@ -30,18 +35,20 @@
     {
         $quantite = $_REQUEST["quantite"];
     
-        foreach($quantite as $uneQuantité)
+        foreach($quantite as $uneQuantite)
         {
 
-            if(!is_integer($uneQuantité))
+            if(!is_integer($uneQuantite))
                 ajouterErreur("Quantit&eacute; invalide");
-            elseif($uneQuantité > 99 )
+            elseif($uneQuantite > 99 )
                 ajouterErreur("Quantit&eacute; trop grande");
-            elseif($uneQuantité <= 0)
+            elseif($uneQuantite <= 0)
                 ajouterErreur ("quantité inferieure ou egale &agrave; 0");
 
         }
     }
+    else
+        $quantite = array(0,0);
     
     
     
@@ -101,6 +108,39 @@
     }
     else
         ajouterErreur("veuillez entrer votre bilan");
+    
+    
+    /*
+     *  NUMERO PRATICANT
+     */
+    if(isset($_REQUEST["listePraticiens"]))
+    {
+        $numPra = $_REQUEST["listePraticiens"];
+        
+        if($numPra == TRUE)
+            $numPra = 1;
+        else
+            $numPra = 0;
+    }
+    else
+        ajouterErreur("pas de praticien selectionn&eacute;");
+    
+    
+    /*
+     * REMPLACANT
+     */
+    if(isset($_REQUEST["remplacant"]))
+    {
+        $remplacant = $_REQUEST["remplacant"];
+        
+        if($remplacant == TRUE)
+            $remplacant = 1;
+        else
+            $remplacant = 0;
+    }
+    else
+        ajouterErreur("pas de retour de remplacant");
+    
     
     
 ?>
