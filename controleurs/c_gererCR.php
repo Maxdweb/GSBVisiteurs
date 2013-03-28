@@ -1,6 +1,7 @@
 ﻿<?php
 include("vues/v_sommaire.php");
 
+
 $action = $_REQUEST['action'];
 $idVisiteur = $_SESSION['vis_matricule'];
 $praticiens = $pdo->getTousPracticiens("PRA_NOM");

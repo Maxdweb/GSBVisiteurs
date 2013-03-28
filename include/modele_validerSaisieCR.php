@@ -7,6 +7,9 @@
     if(isset($_REQUEST["dateVisite"]))
     {
         $date = $_REQUEST["dateVisite"];
+        
+        $date = dateAnglaisVersFrancais($date);
+        
         if(!estDateValide($date))                   // verifie la validité de la date
             ajouterErreur("Date invalide");
         elseif(estDateDepassee($date))              // verifie que la date n'est pas depassée de plus d'un an
@@ -61,7 +64,7 @@
     if(isset($_REQUEST["coeff"]))
     {
         $coef = $_REQUEST["coeff"];
-        if(!is_float($coef) && !is_integer($coef))
+        if(preg_match("/[^0-9]/", $coef))
              ajouterErreur("coefficient invalide");
         elseif($coef < 0 )
              ajouterErreur("coefficient negatif");

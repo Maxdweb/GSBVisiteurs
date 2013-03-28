@@ -83,6 +83,7 @@ function estDatePassee($dateTestee)
 */
 function estDateValide($date){
 	$tabDate = explode('/',$date);
+        
 	$dateOK = true;
 	if (count($tabDate) != 3) {
 	    $dateOK = false;
@@ -93,7 +94,7 @@ function estDateValide($date){
 		}
 		else {
 			if (!checkdate($tabDate[1], $tabDate[0], $tabDate[2])) {
-				$dateOK = false;
+				$dateOK = false;                  
 			}
 		}
     }
@@ -111,7 +112,7 @@ function estTableauEntiers($tab){
 
 	foreach ($tab as $elt) 
 	{
-		if(!preg_match("/[^0-9]/", $elt))
+		if(!preg_match("/[0-9]+/", $elt))
 			$flag = false;
 	}
 
