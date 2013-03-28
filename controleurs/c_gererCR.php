@@ -23,10 +23,10 @@ switch($action)
 		else
 		{                  
                       // insertion du rapport
-                      insertRapportVisite($_SESSION['vis_matricule'] , $numPra , $date , $bilan , $motif , $remplacant);
+                      $pdo->insertRapportVisite($_SESSION['vis_matricule'] , $numPra , $date , $bilan , $motif , $remplacant);
                     
                       // misa à jour du coefficient
-                      updateCoeffNotoriete($coef, $numPra);
+                      $pdo->updateCoeffNotoriete($coef, $numPra);
                       
                       // insertion des produit
                       if($echantillon != "false")
@@ -36,7 +36,7 @@ switch($action)
                       
                          
                     
-			include('vues/v_gererCR.php');
+			//include('vues/v_gererCR.php');
 		}
                 break;
 	}

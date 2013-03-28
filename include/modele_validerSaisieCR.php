@@ -41,7 +41,7 @@
         foreach($quantite as $uneQuantite)
         {
 
-            if(!is_integer($uneQuantite))
+            if(preg_match("/[^0-9]/", $uneQuantite))
                 ajouterErreur("Quantit&eacute; invalide");
             elseif($uneQuantite > 99 )
                 ajouterErreur("Quantit&eacute; trop grande");
@@ -138,5 +138,5 @@
         $remplacant = 0;
     
     
-    
+
 ?>
