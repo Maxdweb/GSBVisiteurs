@@ -74,7 +74,7 @@
             <tr>
                 <td>Produit 02 : </td>
                 <td>
-                    <select name="listeProduits[1]" required onchange="checkProduit(event)">
+                    <select name="listeProduits[1]" onchange="checkProduit(event)">
                         <option value="">Choisir un produit</option>
                         <?php foreach($myMedics as $unMyMedic) { ?>
                             <option value="<?php echo $unMyMedic['med_depotlegal']; ?>"><?php echo $unMyMedic['med_nomcommercial']; ?></option>
