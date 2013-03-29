@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+>>>>>>> 36cb568cdecbb1bc02bcab09385ba7d477c7e257
 <?php
 header('content-type:text/xml');
 
