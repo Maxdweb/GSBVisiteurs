@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <?php
 header('content-type:text/xml');
 
@@ -7,7 +8,6 @@ $pdo = PdoGsb::getPdoGsb();
 $myMedic = $pdo->getMedicById($_POST['id']);
 ?>
 
-<?xml version="1.0" encoding="UTF-8" ?>
 <medicament>
 	<depot><?php echo (isset($myMedic[0]['MED_DEPOTLEGAL'])) ? $myMedic[0]['MED_DEPOTLEGAL'] : "null" ; ?></depot>
 	<nom><?php echo (isset($myMedic[0]['MED_NOMCOMMERCIAL'])) ? $myMedic[0]['MED_NOMCOMMERCIAL'] : "null"; ?></nom>
