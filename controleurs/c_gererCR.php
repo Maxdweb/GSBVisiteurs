@@ -29,7 +29,7 @@ switch($action)
                       $pdo->updateCoeffNotoriete($coef, $numPra);
                       
                       // insertion des produit
-                      for ($i=0; $i< sizeof($produit); $i++ )
+                      for ($i=1; $i< sizeof($produit); $i++ )
                       {
                           if ($produit[$i]!="")
                             $pdo->insertOffrir($_SESSION['vis_matricule'] , $produit[$i] , $quantite[$i] , $doc[$i] , $echantillon[$i]);
